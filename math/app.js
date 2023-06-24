@@ -7,7 +7,7 @@ btn.innerHTML = 'ROLL';
 function diceNumberChanger() {
     dices.forEach(dicesItem => {
         if (dicesItem.classList.contains("active")) {
-            diceNumber = Math.round(Math.random() * dicesItem.value)
+            diceNumber = Math.floor(Math.random() * dicesItem.value + 1)
         };
     });
 }
