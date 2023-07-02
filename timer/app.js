@@ -1,17 +1,36 @@
-// Установка даты Нового года
-let newYearDate = new Date("January 1, " + (new Date().getFullYear() + 1) + " 00:00:00").getTime();
+const newYearDate = new Date(`${new Date().getFullYear + 1}-`)
+
+function getMonthsRemainingToNewYear(date) {
+    return 12 - (date.getMonth() + 1);
+}
+
+const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function isLeapYear(year) {
+    if (year % 100 === 0 && year % 400 !== 0) {
+        return false;
+    }
+    return year % 4 === 0;
+}
+
+function getDaysRemainingToNextMonth(date) {
+    let daysInMonth = DAYS_IN_MONTH[date.getMonth()];
+    if (date.getMonth() === 1 /* February */ && isLeapYear(date.getFullYear())) {
+        daysInMonth += 1;
+    }
+    return daysInMonth - date.getDate();
+}
+
+function getHoursRemainingToNextDay(date) {
+    
+}
 
 // Обновление таймера каждую секунду
 let timer = setInterval(function() {
-    // Получение текущей даты и времени
-    let now = new Date().getTime();
-
-    // Расчет времени, оставшегося до Нового года
-    let timeRemaining = newYearDate - now;
-
-    // Вычисление количества месяцев, дней, часов, минут и секунд
-    let months = Math.floor(timeRemaining / (1000 * 60 * 60 * 24 * 30.44));
-    let days = Math.floor((timeRemaining % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+    const date = new Date();
+    const months = getMonthsRemainingToNewYear(date);
+    const days = getDaysRemainingToNextMonth(date);
+    
     let hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
