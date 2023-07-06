@@ -1,4 +1,4 @@
-const newYearDate = new Date(`${new Date().getFullYear + 1}-`)
+const newYearDate = new Date("January 1, " + (new Date().getFullYear() + 1) + " 00:00:00").getTime();
 
 function getMonthsRemainingToNewYear(date) {
     return 12 - (date.getMonth() + 1);
@@ -23,6 +23,8 @@ function getDaysRemainingToNextMonth(date) {
 
 // Обновление таймера каждую секунду
 let timer = setInterval(function() {
+    let now = new Date().getTime();
+    let timeRemaining = newYearDate - now;
     const date = new Date();
     const months = getMonthsRemainingToNewYear(date);
     const days = getDaysRemainingToNextMonth(date);
