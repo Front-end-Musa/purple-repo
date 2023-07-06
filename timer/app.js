@@ -21,10 +21,6 @@ function getDaysRemainingToNextMonth(date) {
     return daysInMonth - date.getDate();
 }
 
-function getHoursRemainingToNextDay(date) {
-    
-}
-
 // Обновление таймера каждую секунду
 let timer = setInterval(function() {
     const date = new Date();
