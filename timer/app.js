@@ -27,9 +27,9 @@ let timer = setInterval(function() {
     const months = getMonthsRemainingToNewYear(date);
     const days = getDaysRemainingToNextMonth(date);
     
-    let hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
     // Форматирование вывода времени
     let output = months + " month(s), " + days + " day(s), " + hours + " hour(s), " + minutes + " minute(s), " + seconds + " second(s)";
