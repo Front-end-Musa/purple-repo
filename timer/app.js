@@ -34,7 +34,7 @@ let timer = setInterval(function() {
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
     // Форматирование вывода времени
-    let output = months + " month(s), " + days + " day(s), " + hours + " hour(s), " + minutes + " minute(s), " + seconds + " second(s)";
+    const output = months + " month(s), " + days + " day(s), " + hours + " hour(s), " + minutes + " minute(s), " + seconds + " second(s)";
 
     // Вывод времени
     document.querySelector('.timer').innerHTML = output;
