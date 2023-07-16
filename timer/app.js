@@ -14,7 +14,7 @@ function isLeapYear(year) {
 }
 
 function getDaysRemainingToNextMonth(date) {
-    let daysInMonth = DAYS_IN_MONTH[date.getMonth()];
+    const daysInMonth = DAYS_IN_MONTH[date.getMonth()];
     if (date.getMonth() === 1 /* February */ && isLeapYear(date.getFullYear())) {
         daysInMonth += 1;
     }
