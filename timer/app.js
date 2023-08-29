@@ -22,7 +22,7 @@ function getDaysRemainingToNextMonth(date) {
 }
 
 // Обновление таймера каждую секунду
-let timer = setInterval(function() {
+const timer = setInterval(function() {
     let now = new Date().getTime();
     let timeRemaining = newYearDate - now;
     const date = new Date();
