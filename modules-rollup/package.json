@@ -1,0 +1,31 @@
+{
+  "name": "user-task",
+  "version": "1.0.0",
+  "description": "User's tasks logging",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup index.js --file bundle.js --format umd --name \"tasksBundle\"",
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Front-end-Musa/purple-repo.git"
+  },
+  "keywords": [
+    "tasks",
+    "users"
+  ],
+  "author": "Rufatuly Musa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Front-end-Musa/purple-repo/issues"
+  },
+  "homepage": "https://front-end-musa.github.io/portfolio",
+  "dependencies": {
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.29.1"
+  }
+}
